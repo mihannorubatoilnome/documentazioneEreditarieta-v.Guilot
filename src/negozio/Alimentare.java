@@ -79,21 +79,29 @@ public class Alimentare extends Prodotto{
      * Controlla la scadenza del prodotto
      * @return True se il prodotto è scaduto, false altrimenti
      */
-    //Metodo da FINIRE!
-    /*
     public boolean isScaduto(){
-        if()
+        if(this.meseScadenza <= meseScadenza && this.annoScadenza <= annoScadenza)
+            return false;
+        else
+            return true;
     }
-    */
-
     /**
      * Applica uno sconto sul prezzo del prodotto Alimentare.
-     * Se il prodotto è scaduto lo sconto non viene applicato.
-     * Se ci si trova nel mese di scadenza allora applica uno sconto del 50%
-     * Negli altri casi rimane lo sconto del 10%
+     * <ul>
+     * <li> Se il prodotto è scaduto lo sconto non viene applicato </li>
+     * <li> Se ci si trova nel mese di scadenza allora applica uno sconto del 50% </li>
+     * <li> Negli altri casi rimane lo sconto del 10% </li>
+     * </ul>
      */
     public void applicaSconto(){
-        this.prezzo = this.prezzo - (this.prezzo / 100 * 10);
+        if(isScaduto() == false && this.meseScadenza == meseScadenza && this.annoScadenza == annoScadenza)
+            this.prezzo = this.prezzo - (this.prezzo / 100 * 50);
+        else
+            this.prezzo = this.prezzo - (this.prezzo / 100 * 10);
+
+        if(isScaduto() == true)
+            this.prezzo = this.prezzo;
+        
     }
     
     /**

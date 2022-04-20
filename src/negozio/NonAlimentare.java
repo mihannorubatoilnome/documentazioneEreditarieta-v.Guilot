@@ -67,8 +67,10 @@ public class NonAlimentare extends Prodotto{
     
     /**
      * Applica uno sconto sul prodotto Non Alimentare.
-     * Se il prodotto è riciclabile viene uno sconto del 15%
-     * Altrimenti sconto del 10%
+     * <ul>
+     * <li> Se il prodotto è riciclabile viene uno sconto del 15% </li>
+     * <li> Altrimenti sconto del 10% </li>
+     * </ul>
      */
     public void applicaSconto(){
         if(isRiciclabile() == true)
